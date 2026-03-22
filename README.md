@@ -1,0 +1,86 @@
+# 🚀 CF Tag Filter Extension
+
+A Chrome extension to filter your Codeforces solved problems by **tags and date range**.
+
+---
+
+## ✨ Features
+
+* 🔎 Filter solved problems by tags
+* 📅 Date range filtering
+* 📊 Shows number of problems
+* ⭐ Displays problem ratings
+* 🎨 Clean UI matching Codeforces
+
+---
+
+## 🛠️ Tech Stack
+
+* JavaScript
+* Chrome Extensions API
+* Codeforces API
+
+---
+
+## 📸 Screenshots
+
+![UI](assets/ui.png)
+![Result](assets/result.png)  
+---
+
+## 🚀 How to Use (Manual Installation)
+
+Since the extension is not yet published on the Chrome Web Store, follow these steps:
+
+1. Download or clone this repository
+2. Open Chrome and go to:
+
+   ```
+   chrome://extensions/
+   ```
+3. Enable **Developer Mode** (top right)
+4. Click **Load unpacked**
+5. Select the project folder
+
+---
+
+## ▶️ Usage
+
+1. Go to your Codeforces submissions page
+   Example:
+
+   ```
+   https://codeforces.com/submissions/your_handle
+   ```
+2. Select one or more tags
+3. (Optional) Choose date range
+4. Click **Apply**
+5. View filtered problems with ratings
+
+---
+
+## 🔒 Privacy
+
+This extension does not collect or store any personal data.
+All data is fetched from Codeforces public API.
+
+---
+
+## 🚧 Future Improvements
+
+* AND tag filtering
+* Tag search
+* Better analytics dashboard
+
+---
+
+## 👨‍💻 Author
+
+**Adarsh Gupta**
+B.Tech CSE (AI) @ IET Lucknow
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a star ⭐
