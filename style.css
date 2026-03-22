@@ -1,0 +1,101 @@
+/* Container */
+.cf-tag-box {
+    margin-top: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Title like CF */
+.cf-tag-title {
+    font-weight: bold;
+    color: #3b5998;
+    font-size: 14px;
+}
+
+/* Content padding */
+.cf-tag-content {
+    padding: 10px;
+    background: #f8f8f8;
+}
+
+/* Select box */
+.cf-tag-select {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button */
+.cf-tag-button {
+    margin-top: 10px;
+    padding: 4px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.cf-tag-button:hover {
+    background: #e0e0e0;
+}
+
+/* Table */
+.cf-tag-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.cf-tag-table th {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    color: #3b5998;
+    font-weight: bold;
+}
+
+.cf-tag-table td {
+    padding: 4px;
+}
+
+.cf-tag-table tr:hover {
+    background: #f0f0f0;
+}
+.cf-tag-button {
+    display: block;
+    margin: 10px auto;
+}
+
+.cf-tag-table td {
+    border-bottom: 1px solid #eee;
+}
+
+/* 🔷 Date container */
+.cf-date-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+/* 🔷 Date inputs FIXED */
+.cf-date-container input[type="date"] {
+    flex: 1;
+    min-width: 0;              /* 🔥 important fix */
+    width: 100%;
+    box-sizing: border-box;    /* 🔥 prevents overflow */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 12px;
+    background: white;
+}
+
+/* 🔷 Placeholder look */
+.cf-date-container input[type="date"]:hover {
+    border-color: #888;
+}
+
+.cf-tag-table {
+    margin-top: 5px;
+}

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "CF Tag Filter",
+  "version": "1.0",
+  "description": "Filter Codeforces solved problems by tags",
+  "permissions": ["storage"],
+  "host_permissions": ["https://codeforces.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/submissions/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "icons": {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  }
+}
