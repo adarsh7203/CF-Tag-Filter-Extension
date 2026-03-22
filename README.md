@@ -25,22 +25,42 @@ A Chrome extension to filter your Codeforces solved problems by **tags and date 
 ## 📸 Screenshots
 
 ![UI](assets/ui.png)
-![Result](assets/result.png)  
+![Result](assets/result.png)
+
+---
+
+## 📦 Download
+
+### 🔹 Method 1: Download Full Repository
+
+Download the complete project as ZIP:
+
+👉 https://github.com/adarsh7203/CF-Tag-Filter-Extension/archive/refs/heads/main.zip
+
+---
+
+### 🔹 Method 2: Direct Extension ZIP
+
+Download only the ready-to-use extension:
+
+👉 [⬇️ Download CF Tag Filter Extension](https://raw.githubusercontent.com/adarsh7203/CF-Tag-Filter-Extension/main/CF%20Tag%20Filter%20Extension.zip)
+
 ---
 
 ## 🚀 How to Use (Manual Installation)
 
 Since the extension is not yet published on the Chrome Web Store, follow these steps:
 
-1. Download or clone this repository
-2. Open Chrome and go to:
+1. Download the extension (using any method above)
+2. Extract the ZIP file
+3. Open Chrome and go to:
 
    ```
    chrome://extensions/
    ```
-3. Enable **Developer Mode** (top right)
-4. Click **Load unpacked**
-5. Select the project folder
+4. Enable **Developer Mode** (top right)
+5. Click **Load unpacked**
+6. Select the extracted project folder
 
 ---
 
@@ -76,7 +96,7 @@ All data is fetched from Codeforces public API.
 
 ## 👨‍💻 Author
 
-**Adarsh Gupta**  
+**Adarsh Gupta**
 B.Tech CSE (AI) @ IET Lucknow
 
 ---
