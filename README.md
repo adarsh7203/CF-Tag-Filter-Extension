@@ -96,7 +96,7 @@ All data is fetched from Codeforces public API.
 
 ## 👨‍💻 Author
 
-**Adarsh Gupta**
+**Adarsh Gupta**  
 B.Tech CSE (AI) @ IET Lucknow
 
 ---
