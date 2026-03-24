@@ -33,6 +33,9 @@ console.log("EXTENSION LOADED");
 })();
 
 function createUI(tagMap, submissions) {
+
+    let sortOrder = "time";
+
     const container = document.createElement("div");
     container.className = "roundbox sidebox cf-tag-box";
     container.style.marginTop = "15px";
@@ -44,7 +47,7 @@ function createUI(tagMap, submissions) {
     const content = document.createElement("div");
     content.className = "cf-tag-content";
 
-    // 📅 DATE FILTERS
+    // DATE FILTERS
     const dateContainer = document.createElement("div");
     dateContainer.className = "cf-date-container";
 
@@ -57,7 +60,27 @@ function createUI(tagMap, submissions) {
     dateContainer.appendChild(startDate);
     dateContainer.appendChild(endDate);
 
-    // 🔽 TAG SELECT
+    // RATING RANGE
+    const ratingContainer = document.createElement("div");
+    ratingContainer.className = "cf-rating-container";
+
+    const minRating = document.createElement("input");
+    minRating.type = "number";
+    minRating.placeholder = "Min rating";
+    minRating.style.flex = "1";
+
+    const maxRating = document.createElement("input");
+    maxRating.type = "number";
+    maxRating.placeholder = "Max rating";
+    maxRating.style.flex = "1";
+    
+    minRating.className = "cf-rating-input";
+    maxRating.className = "cf-rating-input";
+
+    ratingContainer.appendChild(minRating);
+    ratingContainer.appendChild(maxRating);
+
+    // TAG SELECT
     const select = document.createElement("select");
     select.multiple = true;
     select.className = "cf-tag-select";
@@ -69,17 +92,17 @@ function createUI(tagMap, submissions) {
         select.appendChild(option);
     });
 
-    // 🔘 BUTTON
+    // BUTTON
     const button = document.createElement("button");
     button.textContent = "Apply";
     button.className = "cf-tag-button";
 
-    // 🔢 COUNT
+    // COUNT
     const countDiv = document.createElement("div");
     countDiv.style.fontWeight = "bold";
     countDiv.style.marginTop = "8px";
 
-    // 📦 RESULT
+    // RESULT
     const result = document.createElement("div");
     result.style.marginTop = "10px";
     result.style.maxHeight = "250px";
@@ -94,7 +117,7 @@ function createUI(tagMap, submissions) {
             return;
         }
 
-        // 📅 DATE LOGIC
+        // DATE
         const start = startDate.value
             ? new Date(startDate.value).getTime() / 1000
             : 0;
@@ -102,6 +125,10 @@ function createUI(tagMap, submissions) {
         const end = endDate.value
             ? new Date(endDate.value).getTime() / 1000 + 86400
             : Infinity;
+
+        // RATING RANGE
+        const minR = minRating.value ? parseInt(minRating.value) : 0;
+        const maxR = maxRating.value ? parseInt(maxRating.value) : Infinity;
 
         const problems = new Map();
 
@@ -118,39 +145,67 @@ function createUI(tagMap, submissions) {
                 if (!sub) return;
 
                 const time = sub.creationTimeSeconds;
+                const rating = p.rating || 0;
 
-                if (time >= start && time <= end) {
+                if (time >= start && time <= end &&
+                    rating >= minR && rating <= maxR) {
                     problems.set(key, p);
                 }
             });
         });
 
+        let arr = Array.from(problems.values());
+
+        // SORT LOGIC
+        if (sortOrder === "asc") {
+            arr.sort((a, b) => (a.rating || 0) - (b.rating || 0));
+        } else if (sortOrder === "desc") {
+            arr.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        }
+
         result.innerHTML = "";
 
-        const arr = Array.from(problems.values());
-        arr.sort((a, b) => (a.rating || 0) - (b.rating || 0));
-
-        // 🔥 COUNT DISPLAY
         countDiv.innerHTML = `Showing ${arr.length} problems`;
 
         if (arr.length === 0) {
-            result.innerHTML = "<i style='color:#888;'>No problems found for selected filters</i>";
+            result.innerHTML = "<i style='color:#888;'>No problems found</i>";
             return;
         }
 
-        // 🔥 TABLE
+        // TABLE
         const table = document.createElement("table");
         table.className = "cf-tag-table";
 
         const thead = document.createElement("thead");
         const headerRow = document.createElement("tr");
 
-        ["Problem", "Rating"].forEach(text => {
-            const th = document.createElement("th");
-            th.textContent = text;
-            th.style.textAlign = text === "Rating" ? "right" : "left";
-            headerRow.appendChild(th);
-        });
+        // Problem
+        const th1 = document.createElement("th");
+        th1.textContent = "Problem";
+
+        // Rating with arrow (CF style)
+        const th2 = document.createElement("th");
+        th2.style.textAlign = "right";
+        th2.style.cursor = "pointer";
+
+        const arrow = document.createElement("span");
+        arrow.style.marginLeft = "4px";
+        arrow.innerHTML = sortOrder === "asc" ? "▲" :
+                          sortOrder === "desc" ? "▼" : "▲▼";
+
+        th2.innerHTML = "Rating";
+        th2.appendChild(arrow);
+
+        th2.onclick = () => {
+            if (sortOrder === "time") sortOrder = "asc";
+            else if (sortOrder === "asc") sortOrder = "desc";
+            else sortOrder = "time";
+
+            button.click();
+        };
+
+        headerRow.appendChild(th1);
+        headerRow.appendChild(th2);
 
         thead.appendChild(headerRow);
         table.appendChild(thead);
@@ -159,9 +214,6 @@ function createUI(tagMap, submissions) {
 
         arr.forEach(p => {
             const tr = document.createElement("tr");
-
-            tr.onmouseover = () => tr.style.background = "#f5f5f5";
-            tr.onmouseout = () => tr.style.background = "transparent";
 
             const td1 = document.createElement("td");
             const link = document.createElement("a");
@@ -186,6 +238,7 @@ function createUI(tagMap, submissions) {
     };
 
     content.appendChild(dateContainer);
+    content.appendChild(ratingContainer);
     content.appendChild(select);
     content.appendChild(button);
     content.appendChild(countDiv);

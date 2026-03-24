@@ -24,6 +24,7 @@
     height: 120px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-top: 8px; 
 }
 
 /* Button */
@@ -71,14 +72,14 @@
     border-bottom: 1px solid #eee;
 }
 
-/* 🔷 Date container */
+/* Date container */
 .cf-date-container {
     display: flex;
     gap: 6px;
     margin-bottom: 10px;
 }
 
-/* 🔷 Date inputs FIXED */
+/* Date inputs FIXED */
 .cf-date-container input[type="date"] {
     flex: 1;
     min-width: 0;              /* 🔥 important fix */
@@ -91,11 +92,28 @@
     background: white;
 }
 
-/* 🔷 Placeholder look */
+/* Placeholder look */
 .cf-date-container input[type="date"]:hover {
     border-color: #888;
 }
 
 .cf-tag-table {
     margin-top: 5px;
+}
+
+/* Rating container */
+.cf-rating-container {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+/* Rating inputs */
+.cf-rating-input {
+    flex: 1;
+    min-width: 0;       
+    box-sizing: border-box;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
