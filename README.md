@@ -45,7 +45,7 @@ Download the complete project as ZIP:
 
 Download only the ready-to-use extension:
 
-👉 [⬇️ Download CF Tag Filter Extension](https://raw.githubusercontent.com/adarsh7203/CF-Tag-Filter-Extension/main/CF%20Tag%20Filter%20Extension.zip)
+👉 [⬇️ Download CF Tag Filter Extension](https://raw.githubusercontent.com/adarsh7203/CF-Tag-Filter-Extension/main/CF%20Tag%20Filter.zip)
 
 ---
 
