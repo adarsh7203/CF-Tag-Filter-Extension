@@ -26,8 +26,8 @@ A Chrome extension to filter your Codeforces solved problems by **tags, date and
 
 ## 📸 Screenshots
 
-![UI](assets/ui.png)
-![Result](assets/result.png)
+![UI](assets/ui_image.png)
+![Result](assets/result_image.png)
 
 ---
 
