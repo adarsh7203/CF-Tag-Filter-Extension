@@ -1,6 +1,6 @@
 # 🚀 CF Tag Filter Extension
 
-A Chrome extension to filter your Codeforces solved problems by **tags and date range**.
+A Chrome extension to filter your Codeforces solved problems by **tags, date and rating range**.
 
 ---
 
@@ -9,7 +9,9 @@ A Chrome extension to filter your Codeforces solved problems by **tags and date 
 * 🔎 Filter solved problems by tags
 * 📅 Date range filtering
 * 📊 Shows number of problems
-* ⭐ Displays problem ratings
+* ⭐ Displays problem ratings  
+* 🔽 Filter by rating range (min–max)  
+* 🔽 Filter by rating range (min–max)
 * 🎨 Clean UI matching Codeforces
 
 ---
